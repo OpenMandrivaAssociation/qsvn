@@ -1,8 +1,9 @@
 Summary: 	A graphical Subversion client
 Name: 		qsvn
-Version: 	0.7.0
+Version: 	0.8.0
 Release: 	%mkrel 1
 Source:		http://www.anrichter.net/projects/qsvn/chrome/site/%{name}-%{version}-src.tar.gz
+Patch0:		qsvn-0.8.0-fix-str-fmt.patch
 License: 	GPLv2
 Group: 		Development/Other
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -22,19 +23,20 @@ the Qt4 C++ toolkit from Trolltech for platform independent programming.
 %{_bindir}/*
 
 #--------------------------------------------------------------------
-%define major 4
-%define libname %mklibname svnqt-qt4_ %major
+%define major 5
+%define libname %mklibname svnqt4_ %major
 
 %package -n %libname
 Summary: Library for qsvn
 Group: System/Libraries
+Obsoletes: %{_lib}svnqt-qt4_4
 
 %description -n %libname
 Library for qsvn.
 
 %files -n %libname
 %defattr(-,root,root)
-%{_libdir}/libsvnqt-qt4.so.%{major}*
+%{_libdir}/libsvnqt4.so.%{major}*
 
 #--------------------------------------------------------------------
 %define develname %mklibname -d svnqt-qt4
@@ -56,6 +58,7 @@ Development files for qsvn.
 
 %prep
 %setup -q -n %name-%version
+%patch0 -p0
 
 %build
 %cmake_qt4 ../src
