@@ -51,8 +51,8 @@ Development files for qsvn.
 
 %files -n %develname
 %defattr(-,root,root)
-%{_libdir}/libsvnqt-qt4.so
-%{_includedir}/svnqt-qt4
+%{_libdir}/libsvnqt4.so
+%{_includedir}/svnqt
 
 #--------------------------------------------------------------------
 
