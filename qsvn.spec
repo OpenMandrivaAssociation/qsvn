@@ -1,9 +1,10 @@
 Summary: 	A graphical Subversion client
 Name: 		qsvn
 Version: 	0.8.0
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Source:		http://www.anrichter.net/projects/qsvn/chrome/site/%{name}-%{version}-src.tar.gz
 Patch0:		qsvn-0.8.0-fix-str-fmt.patch
+Patch1:		qsvn-0.8.0-libname.patch
 License: 	GPLv2
 Group: 		Development/Other
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -24,34 +25,34 @@ the Qt4 C++ toolkit from Trolltech for platform independent programming.
 
 #--------------------------------------------------------------------
 %define major 5
-%define libname %mklibname svnqt4_ %major
+%define libname %mklibname qsvnqt4_ %major
 
 %package -n %libname
 Summary: Library for qsvn
 Group: System/Libraries
 Obsoletes: %{_lib}svnqt-qt4_4
+Obsoletes: %{_lib}svnqt4_5 < 0.8.0-2
 
 %description -n %libname
 Library for qsvn.
 
 %files -n %libname
 %defattr(-,root,root)
-%{_libdir}/libsvnqt4.so.%{major}*
+%{_libdir}/libqsvnqt4.so.%{major}*
 
 #--------------------------------------------------------------------
-%define develname %mklibname -d svnqt-qt4
-
-%package -n %develname
+%package devel
 Summary: Development files for qsvn
 Group: Development/KDE and Qt
 Requires: %libname = %version
+Conflicts: kdesvn-devel >= 1.2.0
 
-%description -n %develname
+%description devel
 Development files for qsvn.
 
-%files -n %develname
+%files devel
 %defattr(-,root,root)
-%{_libdir}/libsvnqt4.so
+%{_libdir}/libqsvnqt4.so
 %{_includedir}/svnqt
 
 #--------------------------------------------------------------------
@@ -59,9 +60,10 @@ Development files for qsvn.
 %prep
 %setup -q -n %name-%version
 %patch0 -p0
+%patch1 -p0
 
 %build
-%cmake_qt4 ../src
+%cmake_qt4 ../src -Dsvnqt-name="qsvnqt4"
 %make
 
 %install
