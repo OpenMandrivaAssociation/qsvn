@@ -45,6 +45,7 @@ Library for qsvn.
 Summary: Development files for qsvn
 Group: Development/KDE and Qt
 Requires: %libname = %version
+Obsoletes: %{_lib}svnqt-qt4-devel
 Conflicts: kdesvn-devel >= 1.2.0
 
 %description devel
