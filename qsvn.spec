@@ -1,6 +1,6 @@
 Summary: 	A graphical Subversion client
 Name: 		qsvn
-Version: 	0.8.2
+Version: 	0.8.3
 Release: 	%mkrel 1
 Source:		http://www.anrichter.net/projects/qsvn/chrome/site/%{name}-%{version}-src.tar.gz
 Patch0:		qsvn-0.8.0-fix-str-fmt.patch
@@ -24,7 +24,7 @@ the Qt4 C++ toolkit from Trolltech for platform independent programming.
 %{_bindir}/*
 
 #--------------------------------------------------------------------
-%define major 5
+%define major 6
 %define libname %mklibname qsvnqt4_ %major
 
 %package -n %libname
@@ -32,6 +32,7 @@ Summary: Library for qsvn
 Group: System/Libraries
 Obsoletes: %{_lib}svnqt-qt4_4
 Obsoletes: %{_lib}svnqt4_5 < 0.8.0-2
+Obsoletes: %{_lib}qsvnqt4_5
 
 %description -n %libname
 Library for qsvn.
