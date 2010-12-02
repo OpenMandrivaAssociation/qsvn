@@ -5,6 +5,7 @@ Release: 	%mkrel 2
 Source:		http://www.anrichter.net/projects/qsvn/chrome/site/%{name}-%{version}-src.tar.gz
 Patch0:		qsvn-0.8.0-fix-str-fmt.patch
 Patch1:		qsvn-0.8.1-libname.patch
+Patch2:		qsvn-0.8.3-convert.patch
 License: 	GPLv2
 Group: 		Development/Other
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -63,6 +64,7 @@ Development files for qsvn.
 %setup -q -n %name-%version
 %patch0 -p0
 %patch1 -p0
+%patch2 -p1
 
 %build
 %cmake_qt4 ../src -Dsvnqt-name="qsvnqt4"
