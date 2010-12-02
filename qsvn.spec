@@ -1,7 +1,7 @@
 Summary: 	A graphical Subversion client
 Name: 		qsvn
 Version: 	0.8.3
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Source:		http://www.anrichter.net/projects/qsvn/chrome/site/%{name}-%{version}-src.tar.gz
 Patch0:		qsvn-0.8.0-fix-str-fmt.patch
 Patch1:		qsvn-0.8.1-libname.patch
