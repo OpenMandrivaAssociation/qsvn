@@ -1,0 +1,14 @@
+diff -p -up qsvn-0.8.3/src/statustext.cpp.orig qsvn-0.8.3/src/statustext.cpp
+--- qsvn-0.8.3/src/statustext.cpp.orig	2010-12-02 19:21:02.835706963 -0200
++++ qsvn-0.8.3/src/statustext.cpp	2010-12-02 19:25:34.971707105 -0200
+@@ -58,6 +58,8 @@ void StatusText::outString(const QString
+         editStatusText->append(s);
+         qApp->processEvents();
+     }
+-    else
+-        qDebug("%d",s.toAscii());
++    else {
++	const char *ascii = s.toAscii();
++        qDebug("%s",ascii);
++    }
+ }
