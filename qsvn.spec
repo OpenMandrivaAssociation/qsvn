@@ -76,3 +76,43 @@ rm -rf %{buildroot}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+
+%changelog
+* Thu Dec 02 2010 Paulo Andrade <pcpa@mandriva.com.br> 0.8.3-2mdv2011.0
++ Revision: 605534
+- Rebuild with apr with workaround to issue with gcc type based
+
+* Mon Aug 03 2009 Funda Wang <fwang@mandriva.org> 0.8.3-1mdv2010.0
++ Revision: 407682
+- new version 0.8.3
+
+* Mon Jun 01 2009 Funda Wang <fwang@mandriva.org> 0.8.2-1mdv2010.0
++ Revision: 381868
+- New version 0.8.2
+
+* Sun Feb 15 2009 Frederik Himpe <fhimpe@mandriva.org> 0.8.1-1mdv2009.1
++ Revision: 340481
+- Update to new version 0.8.1
+- Rediff libname patch
+
+* Sun Feb 15 2009 Frederik Himpe <fhimpe@mandriva.org> 0.8.0-3mdv2009.1
++ Revision: 340477
+- rebuild
+
+* Thu Dec 25 2008 Funda Wang <fwang@mandriva.org> 0.8.0-2mdv2009.1
++ Revision: 319020
+- add libname patch
+- obsoletes old devel package
+- rename lib again so that it won't conflicts with kdesvn
+
+* Thu Dec 25 2008 Funda Wang <fwang@mandriva.org> 0.8.0-1mdv2009.1
++ Revision: 318924
+- fix file list
+- new version 0.8.0
+
+* Sun Aug 03 2008 Funda Wang <fwang@mandriva.org> 0.7.0-1mdv2009.0
++ Revision: 261908
+- import qsvn
+
+
