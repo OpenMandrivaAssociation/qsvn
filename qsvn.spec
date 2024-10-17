@@ -9,7 +9,7 @@ Patch2:		qsvn-0.8.3-convert.patch
 License: 	GPLv2
 Group: 		Development/Other
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-URL: 		http://www.anrichter.net/projects/qsvn/
+URL: 		https://www.anrichter.net/projects/qsvn/
 BuildRequires:  qt4-devel
 BuildRequires:	subversion-devel
 BuildRequires:	cmake
